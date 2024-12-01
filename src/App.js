@@ -30,7 +30,7 @@ function App() {
 
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/v1/search',
+        'http://localhost:5004/api/v1/search',
         { query: inputValue } // Sending query in the body
       );
       console.log(inputValue);
