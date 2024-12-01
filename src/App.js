@@ -127,19 +127,8 @@ function App() {
       {/* Display sponsored domains */}
       {sponsoredDomains.length > 0 && (
         <div>
-          <h3>Sponsored Domains:</h3>
-          <ol>
-            {sponsoredDomains.map((domain, index) => (
-              <li key={index}>
-                <a href={domain} target="_blank" rel="noopener noreferrer">
-                  {domain}
-                </a>
-              </li>
-            ))}
-          </ol>
-
-          {/* Export button */}
-          <Button
+        <div>
+        <Button
             variant="contained"
             color="secondary"
             onClick={handleExportExcel}
@@ -147,6 +136,33 @@ function App() {
           >
             Export to Excel
           </Button>
+    <h3>Sponsored Domains:</h3>
+    
+    <table border="1" cellPadding="10" cellSpacing="0" style={{ width: '100%', textAlign: 'center' }}>
+      <thead>
+        <tr>
+          <th>Index</th>
+          <th>Domain</th>
+        </tr>
+      </thead>
+      <tbody>
+        {sponsoredDomains.map((domain, index) => (
+          <tr key={index}>
+            <td>{index + 1}</td> {/* Show index starting from 1 */}
+            <td>
+              <a href={domain} target="_blank" rel="noopener noreferrer">
+                {domain}
+              </a>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+   
+  </div>
+
+          {/* Export button */}
+         
         </div>
       )}
     </div>
